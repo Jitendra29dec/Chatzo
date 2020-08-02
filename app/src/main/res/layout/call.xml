@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@drawable/banner"
+        android:layout_centerInParent="true">
+    </ImageView>
+    <TextureView
+        android:id="@+id/videoSurface"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="80dp"/>
+
+    <TextureView
+        android:id="@+id/videoCaptureSurface"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true" />
+
+    <TextView
+        android:id="@+id/call_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Call Ongoing"
+        android:textSize="20sp"
+        android:layout_margin="40dp"
+        android:gravity="center">
+    </TextView>
+
+    <Button
+        android:id="@+id/terminate_call"
+        android:text="Terminate call"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="32dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="34dp"
+            android:focusable="true"
+            android:clickable="true"
+            android:foreground="?android:selectableItemBackground"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            app:cardBackgroundColor="@android:color/white">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_video_inside"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="32dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="2dp"
+                app:cardBackgroundColor="@color/background">
+                <ImageView
+                    android:id="@+id/image_video"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_videocam_off_24"
+                    android:padding="20dp"
+                    android:tint="@color/white">
+                </ImageView>
+            </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_end_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="34dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:focusable="true"
+            android:clickable="true"
+            android:foreground="?android:selectableItemBackground"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            app:cardBackgroundColor="@android:color/holo_red_dark">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_call_24"
+                android:padding="22dp"
+                android:tint="@android:color/white">
+            </ImageView>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_speaker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="34dp"
+            android:focusable="true"
+            android:clickable="true"
+            android:foreground="?android:selectableItemBackground"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            app:cardBackgroundColor="@android:color/white">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_speaker_inside"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="32dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="2dp"
+                app:cardBackgroundColor="@color/white">
+                <ImageView
+                    android:id="@+id/image_speaker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_volume_up_24"
+                    android:padding="20dp"
+                    android:tint="@color/background">
+                </ImageView>
+            </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</RelativeLayout>

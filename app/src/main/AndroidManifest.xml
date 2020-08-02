@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.chatzo">
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+
+    <application
+        android:name=".controllers.AppController"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+        <service
+            android:name=".controllers.MyNotificationExtenderService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE">
+            <intent-filter>
+                <action android:name="com.onesignal.NotificationExtender" />
+            </intent-filter>
+        </service>
+        <meta-data
+            android:name="com.onesignal.NotificationOpened.DEFAULT"
+            android:value="DISABLE" /> <!-- Disable Badges -->
+        <meta-data
+            android:name="com.onesignal.BadgeCount"
+            android:value="ENABLE" />
+
+        <activity android:name=".Activity.User_chat_activity" />
+        <activity android:name=".Activity.New_message_Acitity" />
+        <activity android:name=".Activity.Chat_Main_activity" />
+        <activity android:name=".Activity.Profile_info_activity" />
+        <activity android:name=".Activity.Verifyotp_activity" />
+        <activity android:name=".Activity.Phone_number_activity" />
+        <activity android:name=".Activity.Walkthrough_activity" />
+        <activity android:name=".Activity.ActCreatePin" />
+        <activity android:name=".Activity.ActVerifyPin" />
+        <activity android:name=".Activity.ActChatNew" />
+        <activity android:name=".Activity.ActChatNewLocalDb" />
+        <activity android:name=".Activity.ActViewPdf" />
+        <activity
+            android:name=".Activity.PhotoVideoRedirectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.WhatsappCameraActivity"
+            android:screenOrientation="behind" />
+        <activity android:name=".Activity.CallActivity" />
+
+        <service android:name=".service.LinphoneService" />
+        <service android:name=".service.LinphoneService" />
+
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Activity.ActSplash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity android:name=".Activity.Incoming_call_activity" />
+    </application>
+
+</manifest>
